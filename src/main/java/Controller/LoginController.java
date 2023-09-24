@@ -57,7 +57,39 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+    	 HttpSession session = request.getSession();
+         String email = request.getParameter("email");
+         String password = request.getParameter("password");
+         
+         Dao dao = Dao.getInstance();
+         Account acc = dao.login(email, password);
+           //  Phân QUyền sau 
+         
+         
+         
+         if(acc ==null){
+            
+            request.setAttribute("msg", "Tên đăng nhập hoặc mật khẩu sai");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+         }else{
+             int role = acc.getRoleid();
+             switch(role){
+             
+             case 1: session.setAttribute("accountstudent", acc);
+             Student st = dao.getAStudentByEmail(email);
+             request.setAttribute("student", st);
+             request.getRequestDispatcher("studentHomePage.jsp").forward(request, response);
+             break;
+             case 2: 
+                 session.setAttribute("accountstudent", acc);
+             //Student st = dao.getAStudentByEmail(email);
+             //request.setAttribute("student", st);
+             request.getRequestDispatcher("teacherHomePage.jsp").forward(request, response);
+             break;
+             
+         }
+             
+         }
     } 
 
     /** 

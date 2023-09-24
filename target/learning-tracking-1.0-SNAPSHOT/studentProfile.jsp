@@ -91,49 +91,6 @@
         </div>
       </div>
 
-      <div class="app-container">
-        <div class="grid d-grid">
-          <div class="section-m1">
-            <div class="row">
-              <div class="col">
-                <div class="box-section">
-                  <div class="app-home__heading">
-                    <div class="header-name">
-                      <a href="studentHomePage.jsp">
-                        <i class="fa-solid fa-arrow-left"></i>
-                      </a>
-                      Hồ sơ học sinh
-                    </div>
-                  </div>
-                  <div class="app-home__body">
-                    <div class="info-container">
-                      <div class="row mt-5">
-                        <div class="col">
-                          <div class="row">
-                            <div class="col">
-                              <div class="card-body text-center student-profile__avatar">
-                                <img
-                                  class="img-account-profile rounded-circle mb-4 mt-4"
-                                  src="./assets/imgs/user.png"
-                                  alt=""
->>>>>>> f07c42c92cf9d285482309ae3a19817032190faa
-                                />
-                            <p>Sổ liên lạc điện tử</p>
-                        </a>
-
-                        <div class="navbar-school">
-                            <img
-                                src="./assets/imgs/highSchool.png"
-                                width="30"
-                                height="30"
-                                class="d-inline-block align-top"
-                                alt=""
-                                />
-                            <p>FPT High School</p>
-                        </div>
-                    </nav>
-                </div>
-            </div>
 
             <div class="app-container">
                 <div class="grid d-grid">
@@ -143,7 +100,7 @@
                                 <div class="box-section">
                                     <div class="app-home__heading">
                                         <div class="header-name">
-                                            <a href="studentHomePage.html">
+                                            <a href="studentHomePage.jsp">
                                                 <i class="fa-solid fa-arrow-left"></i>
                                             </a>
                                             Hồ sơ học sinh
@@ -211,7 +168,6 @@
                                     </div>
 
 
-<<<<<<< HEAD
                                     <!-- Tabs profile  -->
                                     <div class="tabs ms-5">
                                         <div class="tab-item active">
@@ -263,7 +219,7 @@
                                 </div>
                             </div>
                         </div>
-=======
+
                   <!-- Tabs profile  -->
                   <div class="tabs ms-5">
                     <div class="tab-item active">
@@ -310,7 +266,7 @@
                         </form>
                       </div>
                     </div>
->>>>>>> f07c42c92cf9d285482309ae3a19817032190faa
+
                     </div>
                 </div>
             </div>
