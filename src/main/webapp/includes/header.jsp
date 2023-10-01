@@ -35,9 +35,9 @@
             aria-expanded="false"
             ></button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="changePassword.jsp">Đổi mật khẩu</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
         </ul>
     </div>
 </div>
