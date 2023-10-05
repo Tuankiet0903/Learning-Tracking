@@ -19,7 +19,6 @@ public class DBUtil {
      public static Connection makeConnection() {
         Connection conn = null;
         try {
-
             String dbURL = "jdbc:sqlserver://DESKTOP-5A91TRU;databaseName=swp_minicapstone;encrypt=true;trustServerCertificate=true;";
             String user = "sa";
             String pass = "123";
@@ -43,7 +42,7 @@ public class DBUtil {
         }
     }
     
-    ////////////////////////////////////////////////////////////////////////////
+ 
 
     public static void main(String[] args) throws SQLException {
         
