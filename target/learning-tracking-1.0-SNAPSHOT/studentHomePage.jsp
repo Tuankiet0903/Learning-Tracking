@@ -263,7 +263,3 @@
                 </div>
             </div>
         </div>
-       <!--Ne-->
-       <%@ include file="./includes/linkJS.jsp" %>
-    </body>
-</html>
