@@ -425,6 +425,20 @@ list-style-type: none;
     
 }
 
+#infoModal {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#infoModal select {
+    height: 40px;
+    font-size: 16px
+}
+
+#infoModal button {
+    font-size: 20px;
+}
+
 .input-mark-student {
     width: 50px;
     outline: none;

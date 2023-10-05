@@ -106,7 +106,7 @@
               <form action="">
                 <div class="row mb-5">
                     <div class="col-6">
-                      <label class="col-3 col-form-label"
+                      <label class="col-3 col-form-label modal__label"
                         >Khối</label
                       >
                       <div class="col-8 d-flex justify-content-around">

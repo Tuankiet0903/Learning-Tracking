@@ -14,7 +14,7 @@
                 <div class="box-section">
                   <div class="app-home__heading">
                     <div class="header-name d-flex justify-content-between">
-                      <span>Danh sách học sinh</span>
+                      <span>Danh sách giáo viên</span>
                     </div>
                   </div>
                   <div class="app-home__body m-5">
