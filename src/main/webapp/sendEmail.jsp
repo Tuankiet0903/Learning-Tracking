@@ -54,8 +54,8 @@
                             />
                         </div>
                         <div class="text-white mb-3 m-lg-4">
-                            <h7>
-                                Thư xác nhận sẽ được gửi vào hòm thư của bạn
+                            <h7 class="text-danger">
+                                ${msg}
                             </h7>
                         </div>
                         <br />
