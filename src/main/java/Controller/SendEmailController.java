@@ -87,7 +87,7 @@ public class SendEmailController extends HttpServlet {
             request.getRequestDispatcher("sendEmail.jsp").forward(request, response);
         }else{
             String link = "Hello " + to + ",<br><br>" +
-                            "<a href='http://localhost:8080/mavenproject1/verify-email?email=" + to + "'>Click Here</a> to reset your password:<br><br>" +
+                            "<a href='http://localhost:8080/learning-tracking/verify-email?email=" + to + "'>Click Here</a> to reset your password:<br><br>" +
                             "If you didn't request a password reset, please ignore this email.<br><br>" +
                             "This is an automatically generated email from the system, do not reply!<br><br>" +
                             "SSMS Account Management";

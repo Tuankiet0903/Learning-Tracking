@@ -117,6 +117,23 @@ public class Dao implements Serializable{
         return null;
     }
     
+    public void changePassword(String email, String newPassword) {
+        PreparedStatement stm;
+        try {
+
+            String sql = "UPDATE account SET password = ? WHERE email = ?";
+            stm = conn.prepareStatement(sql);
+            stm.setString(1, newPassword);
+            stm.setString(2, email);
+
+            stm.executeUpdate();
+
+        } catch (Exception ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
     
     
     
