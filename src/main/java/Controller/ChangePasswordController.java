@@ -7,7 +7,6 @@ package Controller;
 
 import DAO.Dao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -82,7 +81,7 @@ public class ChangePasswordController extends HttpServlet {
             request.setAttribute("email",email );
             request.getRequestDispatcher("changePassword_forgot.jsp?email="+email).forward(request, response);
         }else{
-            dao.changePassword(email,password);
+            dao.changePassword_forgot(email,password);
             request.getRequestDispatcher("changePassword_success.jsp").forward(request, response);
         }
     }

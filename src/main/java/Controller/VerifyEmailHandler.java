@@ -30,13 +30,22 @@ public class VerifyEmailHandler extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String email = request.getParameter("email");
-        
         Dao dao = Dao.getInstance();
+        
+        String email = request.getParameter("email");
+        String token = request.getParameter("token");
+        String sqlToken = dao.getTokenByEmail(email).getToken();
+        
+        
         Student st = dao.getAStudentByEmail(email);
         
-        if(st != null){
-            request.getRequestDispatcher("changePassword.jsp?email="+email).forward(request, response);
+        request.setAttribute("email",email );
+        
+        
+        
+        if(st != null && token.equals(sqlToken)){
+            dao.updateToken("", email);
+            request.getRequestDispatcher("changePassword_forgot.jsp?email="+email).forward(request, response);
         }else{
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }

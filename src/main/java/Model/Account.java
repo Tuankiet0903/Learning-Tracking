@@ -13,6 +13,13 @@ public class Account {
     private String email;
     private String password;
     private int roleid;
+     private String token;
+  
+
+    public Account(String email, String token) {
+        this.email = email;
+        this.token = token;
+    }
 
     public Account(String email, String password, int roleid) {
         this.email = email;
@@ -45,6 +52,13 @@ public class Account {
 
     public void setRoleid(int roleid) {
         this.roleid = roleid;
+    }
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     @Override

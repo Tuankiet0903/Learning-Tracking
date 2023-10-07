@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Properties;
+import java.util.UUID;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
@@ -79,15 +80,21 @@ public class SendEmailController extends HttpServlet {
     throws ServletException, IOException {
         
         final String to = request.getParameter("email");
+        
         Dao dao = Dao.getInstance();
+        
         Student st = dao.getAStudentByEmail(to);
         
         if(st == null){
             request.setAttribute("msg", "Sai Email vui lòng nhập lại");
             request.getRequestDispatcher("sendEmail.jsp").forward(request, response);
         }else{
+            String token = this.generateResetToken();
+
+            dao.updateToken(token, to);
+
             String link = "Hello " + to + ",<br><br>" +
-                            "<a href='http://localhost:8080/learning-tracking/verify-email?email=" + to + "'>Click Here</a> to reset your password:<br><br>" +
+                            "<a href='http://localhost:8080/mavenproject1/verify-email?email=" + to + "&token="+token+ "'>Click Here</a> to reset your password:<br><br>" +
                             "If you didn't request a password reset, please ignore this email.<br><br>" +
                             "This is an automatically generated email from the system, do not reply!<br><br>" +
                             "SSMS Account Management";
@@ -96,8 +103,11 @@ public class SendEmailController extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
             
         }
-        
-       
+    }
+    
+    
+    public String generateResetToken(){
+        return UUID.randomUUID().toString();
     }
     
     
@@ -147,5 +157,9 @@ public class SendEmailController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private Object getInstance() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }
